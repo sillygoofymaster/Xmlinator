@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<libraryDatabase>
+
+<book BK_ID="1">
+	<title>Математична логіка</title>
+	 <author AU_ID="1">Шкільняк С.С.</author>
+	<format>PDF</format>
+</book>
+
+	<book BK_ID="2">
+		<title>Об'єктно-орієнтоване програмування</title>
+		<author AU_ID="2">Омельчук Л.Л.</author>
+		<year>2022</year>
+		<format>Paperback</format>
+	</book>
+
+	<book BK_ID="3">
+		<title>Математична логіка. Приклади і задачі</title>
+		<author AU_ID="1">Шкільняк С.С.</author>
+		<year>2022</year>
+		<format>PDF, Paperback</format>
+	</book>
+
+	<book BK_ID="4">
+		<title>The ultimate guide</title>
+		<year>356</year>
+		<format>Codex</format>
+	</book>
+
+	<book BK_ID="5">
+		<title>The Definitive ANTLR4 Reference</title>
+		<author AU_ID="3">Terence Parr</author>
+		<format>PDF</format>
+	</book>
+
+	<book BK_ID="6">
+		<title>Дискретна математика</title>
+		<author AU_ID="4">Трохимчук Р.М.</author>
+		<year>2015</year>
+		<format>Paperback</format>
+	</book>
+
+	<book BK_ID="7">
+		<title>Fundamental Algorithms</title>
+		<author AU_ID="5">Knuth</author>
+		<year>1973</year>
+	</book>
+
+	<book BK_ID="8">
+		<title>Concrete Mathematics</title>
+		<author AU_ID="5">Knuth</author>
+		<year>1988</year>
+		<format>PDF</format>
+	</book>
+
+	<book BK_ID="9">
+		<title>Ще що-небудь про логіку</title>
+		<author AU_ID="1">Шкільняк С.С.</author>
+		<year>356</year>
+	</book>
+
+</libraryDatabase>

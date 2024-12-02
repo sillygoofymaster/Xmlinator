@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xmlinator.MainPage">
+
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="StatusLabel"
+           Grid.Row="0"
+           Grid.Column="0"
+           HorizontalOptions="Center"
+           VerticalOptions="Center"
+           Padding="0, 0, 10, 0"
+           Text="File is not chosen" />
+
+            <Grid
+               x:Name="ResultsTable"
+               Grid.Row="1"
+               Grid.Column="0"
+               Grid.RowSpan="6"
+               Padding="0, 10, 0, 0" >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0"
+               Grid.Column="0"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Text="Назва" />
+
+                <Label Grid.Row="0"
+               Grid.Column="1"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Text="Автор" />
+
+                <Label Grid.Row="0"
+               Grid.Column="2"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Text="ID автора" />
+
+                <Label Grid.Row="0"
+               Grid.Column="3"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Text="Рік" />
+
+                <Label Grid.Row="0"
+               Grid.Column="4"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Text="Формат" />
+
+            </Grid>
+
+
+            <HorizontalStackLayout
+                Grid.Row="0"
+                Grid.Column="2"
+                Padding="10"
+                Spacing="40">
+
+                <Button
+                    Text="Імпортувати файл"
+                    Clicked="OpenFileButton_Clicked" />
+
+                <Picker x:Name="ParserPicker" Title="Оберіть парсер" SelectedIndexChanged="Parser_Selected">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>SAX</x:String>
+                            <x:String>DOM</x:String>
+                            <x:String>LINQ to XML</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout
+                Grid.Row="1"
+                Grid.Column="2"
+                Padding="10, 0, 10, 0"
+                Spacing="5">
+
+                <Button
+                    Text="Шукати"
+                    Clicked="SearchButton_Clicked" />
+
+                <Button
+                    Text="Очистити"
+                    Clicked="ClearButton_Clicked" />
+
+                <Button
+                    Text="Експортувати як HTML"
+                    Clicked="ExporAstButton_Clicked" />
+
+                <Button
+                    Text="Вийти"
+                    Clicked="ExitButton_Clicked" />
+
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout
+                Grid.Row="2"
+                Grid.Column="2"
+                Spacing="5">
+
+                <CheckBox
+                    x:Name="TitleCheckbox"
+                     />
+
+                <Label 
+                    WidthRequest="80"
+                    Text="Назва" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center" />
+
+                <Entry 
+                    x:Name="TitleEntry"
+                    Placeholder="Введіть назву книги"
+                    WidthRequest="200" />
+
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout
+                Grid.Row="3"
+                Grid.Column="2"
+                Spacing="5">
+
+                <CheckBox
+                    x:Name="FormatCheckbox"
+                     />
+
+                <Label 
+                    WidthRequest="80"
+                    Text="Формат" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center" />
+
+                <Entry 
+                    x:Name="FormatEntry"
+                    Placeholder="Введіть формат книги"
+                    WidthRequest="200" />
+
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout
+                Grid.Row="4"
+                Grid.Column="2"
+                Spacing="5">
+
+                <CheckBox
+                    x:Name="AU_IDCheckbox"
+                     />
+
+                <Label 
+                    WidthRequest="80"
+                    Text="ID автора" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center" />
+
+                <Entry 
+                    x:Name="IDEntry"
+                    Placeholder="Введіть перші цифри ID автора"
+                    WidthRequest="200" />
+
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout
+                Grid.Row="5"
+                Grid.Column="2"
+                Spacing="5">
+
+                <CheckBox
+                    x:Name="AuthorCheckbox"
+                     />
+
+                <Label 
+                    WidthRequest="80"
+                    Text="Автор" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center" />
+
+                <Entry 
+                    x:Name="AuthorEntry"
+                    Placeholder="Введіть ім'я автора книги"
+                    WidthRequest="200" />
+
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout
+                Grid.Row="6"
+                Grid.Column="2"
+                Spacing="5">
+
+                <CheckBox
+                    x:Name="YearCheckbox"
+                     />
+
+                <Label 
+                    WidthRequest="80"
+                    Text="Рік" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center" />
+
+                <Entry 
+                    x:Name="YearEntry"
+                    Placeholder="Введіть рік написання книги"
+                    WidthRequest="200" />
+
+            </HorizontalStackLayout>
+
+ 
+        </Grid>
+
+    </ScrollView>
+
+</ContentPage>
